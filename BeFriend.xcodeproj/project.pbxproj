@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		633311B71D06105600D7CFDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633311B61D06105600D7CFDE /* AppDelegate.swift */; };
 		633311B91D06105600D7CFDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633311B81D06105600D7CFDE /* ViewController.swift */; };
-		633311BC1D06105600D7CFDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633311BA1D06105600D7CFDE /* Main.storyboard */; };
 		633311BF1D06105600D7CFDE /* BeFriend.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 633311BD1D06105600D7CFDE /* BeFriend.xcdatamodeld */; };
 		633311C11D06105600D7CFDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633311C01D06105600D7CFDE /* Assets.xcassets */; };
 		633311C41D06105600D7CFDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633311C21D06105600D7CFDE /* LaunchScreen.storyboard */; };
 		633311CF1D06105600D7CFDE /* BeFriendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633311CE1D06105600D7CFDE /* BeFriendTests.swift */; };
 		633311DA1D06105600D7CFDE /* BeFriendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633311D91D06105600D7CFDE /* BeFriendUITests.swift */; };
+		6358874C1D061FDB002591DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6358874A1D061FDB002591DA /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		633311B31D06105600D7CFDE /* BeFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		633311B61D06105600D7CFDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		633311B81D06105600D7CFDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		633311BB1D06105600D7CFDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		633311BE1D06105600D7CFDE /* BeFriend.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeFriend.xcdatamodel; sourceTree = "<group>"; };
 		633311C01D06105600D7CFDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		633311C31D06105600D7CFDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		633311D51D06105600D7CFDE /* BeFriendUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeFriendUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		633311D91D06105600D7CFDE /* BeFriendUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeFriendUITests.swift; sourceTree = "<group>"; };
 		633311DB1D06105600D7CFDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6358874B1D061FDB002591DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 			children = (
 				633311B61D06105600D7CFDE /* AppDelegate.swift */,
 				633311B81D06105600D7CFDE /* ViewController.swift */,
-				633311BA1D06105600D7CFDE /* Main.storyboard */,
+				6358874A1D061FDB002591DA /* Main.storyboard */,
 				633311C01D06105600D7CFDE /* Assets.xcassets */,
 				633311C21D06105600D7CFDE /* LaunchScreen.storyboard */,
 				633311C51D06105600D7CFDE /* Info.plist */,
@@ -235,9 +235,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6358874C1D061FDB002591DA /* Main.storyboard in Resources */,
 				633311C41D06105600D7CFDE /* LaunchScreen.storyboard in Resources */,
 				633311C11D06105600D7CFDE /* Assets.xcassets in Resources */,
-				633311BC1D06105600D7CFDE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,20 +300,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		633311BA1D06105600D7CFDE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				633311BB1D06105600D7CFDE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		633311C21D06105600D7CFDE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				633311C31D06105600D7CFDE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6358874A1D061FDB002591DA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6358874B1D061FDB002591DA /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -406,10 +406,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BeFriend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daooyoo.BeFriend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -417,10 +420,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BeFriend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daooyoo.BeFriend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -489,6 +495,7 @@
 				633311E01D06105600D7CFDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		633311E11D06105600D7CFDE /* Build configuration list for PBXNativeTarget "BeFriendTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +504,7 @@
 				633311E31D06105600D7CFDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		633311E41D06105600D7CFDE /* Build configuration list for PBXNativeTarget "BeFriendUITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +513,7 @@
 				633311E61D06105600D7CFDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
