@@ -15,6 +15,7 @@
 		633311CF1D06105600D7CFDE /* BeFriendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633311CE1D06105600D7CFDE /* BeFriendTests.swift */; };
 		633311DA1D06105600D7CFDE /* BeFriendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633311D91D06105600D7CFDE /* BeFriendUITests.swift */; };
 		6358874C1D061FDB002591DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6358874A1D061FDB002591DA /* Main.storyboard */; };
+		639594641D07661C0041DCCA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639594631D07661C0041DCCA /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		633311D91D06105600D7CFDE /* BeFriendUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeFriendUITests.swift; sourceTree = "<group>"; };
 		633311DB1D06105600D7CFDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6358874B1D061FDB002591DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		639594631D07661C0041DCCA /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				633311B61D06105600D7CFDE /* AppDelegate.swift */,
 				633311B81D06105600D7CFDE /* ViewController.swift */,
+				639594631D07661C0041DCCA /* SignInViewController.swift */,
 				6358874A1D061FDB002591DA /* Main.storyboard */,
 				633311C01D06105600D7CFDE /* Assets.xcassets */,
 				633311C21D06105600D7CFDE /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639594641D07661C0041DCCA /* SignInViewController.swift in Sources */,
 				633311B91D06105600D7CFDE /* ViewController.swift in Sources */,
 				633311BF1D06105600D7CFDE /* BeFriend.xcdatamodeld in Sources */,
 				633311B71D06105600D7CFDE /* AppDelegate.swift in Sources */,
