@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  SignUpViewController.swift
 //  BeFriend
 //
 //  Created by David Yoo on 6/7/16.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
-    
+class SignUpViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,8 +20,8 @@ class SignInViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func cancelSignIn() {
+
+    @IBAction func cancelSignUp() {
         dismissViewControllerAnimated(true, completion: nil)
     }
 }
