@@ -16,6 +16,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmTextField: UITextField!
     
+    let userHandler = UserHandler()
+    var newUser: User?
+    
     enum Error: ErrorType {
         case NoFirstName
         case NoLastName
@@ -23,6 +26,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         case NoPassword
         case NoConfirm
         case PasswordMismatch
+        case UsernameTaken
     }
     
     override func viewDidLoad() {
@@ -34,6 +38,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "startSession" {
+            createAccount()
+            if let userPageController = segue.destinationViewController as? UserPageController {
+                userPageController.user = newUser
+            }
+        }
     }
 
     @IBAction func cancelSignUp() {
@@ -63,13 +76,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @IBAction func createAccount() {
-        if checkForBlankFields() == false && checkPasswordMatch() == true {
-            showAlert("You're all set! Welcome!")
+    func createAccount() {
+        let firstName = firstNameTextField.text!
+        let lastName = lastNameTextField.text!
+        let username = usernameTextField.text!
+        let password = passwordTextField.text!
+        
+        if noBlankFields() && passwordsMatch() && uniqueUsername() {
+            newUser = User(firstName: firstName, lastName: lastName, username: username, password: password)
+            userHandler.saveNewUser(newUser!)
         }
     }
     
-    func checkForBlankFields() -> Bool {
+    func noBlankFields() -> Bool {
         do {
             if firstNameTextField.text == "" {
                 throw Error.NoFirstName
@@ -84,34 +103,36 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             }
         }
         catch Error.NoFirstName {
-            showAlert("First Name Required")
-            return true
+            showAlert("First Name Required", viewController: self)
+            return false
         } catch Error.NoLastName {
-            showAlert("Last Name Required")
-            return true
+            showAlert("Last Name Required", viewController: self)
+            return false
         } catch Error.NoUsername {
-            showAlert("Username Required")
-            return true
+            showAlert("Username Required", viewController: self)
+            return false
         } catch Error.NoPassword {
-            showAlert("Password Required")
-            return true
+            showAlert("Password Required", viewController: self)
+            return false
         } catch Error.NoConfirm {
-            showAlert("Please Confirm Password")
-            return true
+            showAlert("Please Confirm Password", viewController: self)
+            return false
         } catch let error {
             fatalError("\(error)")
         }
         
-        return false
+        return true
     }
     
-    func checkPasswordMatch() -> Bool {
+    func passwordsMatch() -> Bool {
         do {
             if passwordTextField.text != confirmTextField.text {
                 throw Error.PasswordMismatch
             }
         } catch Error.PasswordMismatch {
-            showAlert("Passwords Do Not Match")
+            showAlert("Passwords Do Not Match", viewController: self)
+            passwordTextField.text = ""
+            confirmTextField.text = ""
             return false
         } catch let error {
             fatalError("\(error)")
@@ -119,13 +140,24 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func showAlert(title: String, message: String? = nil, style: UIAlertControllerStyle = .Alert) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+    func uniqueUsername() -> Bool {
+        let users = userHandler.fetchUsers()
         
-        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-        
-        alertController.addAction(okAction)
-        
-        presentViewController(alertController, animated: true, completion: nil)
+        do {
+            var i = 0
+            while i < users.count {
+                if users[i].valueForKey("username") as! String == usernameTextField.text! {
+                    throw Error.UsernameTaken
+                }
+                i += 1
+            }
+        } catch Error.UsernameTaken {
+            showAlert("Sorry! Username Already Taken", message: "Please enter another username", viewController: self)
+            usernameTextField.text = ""
+        } catch let error {
+            fatalError("\(error)")
+        }
+        return true
     }
+    
 }

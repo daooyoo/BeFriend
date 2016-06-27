@@ -13,9 +13,14 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    let userHandler = UserHandler()
+    
+    var user: User?
+    
     enum Error: ErrorType {
         case NoUsername
         case NoPassword
+        case BadCombo
     }
     
     override func viewDidLoad() {
@@ -27,6 +32,16 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "startSession" {
+            if noBlankFields() && userExists() {
+                if let userPageController = segue.destinationViewController as? UserPageController {
+                    userPageController.user = user
+                }
+            }
+        }
     }
     
     @IBAction func cancelSignIn() {
@@ -47,13 +62,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @IBAction func loginToAccount() {
-        if checkForBlankFields() == false {
-            showAlert("Welcome Back, \(usernameTextField.text!)!")
-        }
-    }
-    
-    func checkForBlankFields() -> Bool {
+    func noBlankFields() -> Bool {
         do {
             
             if usernameTextField.text == "" {
@@ -63,24 +72,36 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             }
             
         } catch Error.NoUsername {
-            showAlert("Please Enter Your Username")
-            return true
+            showAlert("Please Enter Your Username", viewController: self)
+            return false
         } catch Error.NoPassword {
-            showAlert("Please Enter Your Password")
-            return true
+            showAlert("Please Enter Your Password", viewController: self)
+            return false
         } catch let error {
             fatalError("\(error)")
         }
-        return false
+        return true
     }
+    
+    func userExists() -> Bool {
+        var userExists = false
 
-    func showAlert(title: String, message: String? = nil, style: UIAlertControllerStyle = .Alert) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        user = userHandler.fetchUser(usernameTextField.text!, password: passwordTextField.text!)
         
-        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        if user != nil {
+            userExists = true
+        }
         
-        alertController.addAction(okAction)
+        do {
+            if !userExists {
+                throw Error.BadCombo
+            }
+        } catch Error.BadCombo {
+            showAlert("Bad Combo", viewController: self)
+        } catch let error {
+            fatalError("\(error)")
+        }
         
-        presentViewController(alertController, animated: true, completion: nil)
+        return userExists
     }
 }

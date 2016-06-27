@@ -114,7 +114,7 @@
                                 <color key="tintColor" red="0.91846196339999997" green="0.81696637900000002" blue="0.17752370410000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="loginToAccount" destination="Nv7-ml-7b7" eventType="touchUpInside" id="eKQ-eU-20K"/>
+                                    <segue destination="auk-wC-IPZ" kind="show" identifier="startSession" id="YEn-ce-NJ4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfF-fV-27l">
@@ -156,6 +156,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAC-Q3-oC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2000" y="318"/>
+        </scene>
+        <!--User Page Controller-->
+        <scene sceneID="ea7-6Z-pVs">
+            <objects>
+                <viewController id="auk-wC-IPZ" customClass="UserPageController" customModule="BeFriend" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8cY-hA-q2n"/>
+                        <viewControllerLayoutGuide type="bottom" id="c8c-Ie-uCW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aKs-kp-gIC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jyH-Mk-Zuf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2892" y="318"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="fqt-0L-uQ9">
@@ -208,7 +226,7 @@
                                 <color key="tintColor" red="0.91846196339999997" green="0.81696637900000002" blue="0.17752370410000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <action selector="createAccount" destination="W0P-4R-Vp6" eventType="touchUpInside" id="ujo-OV-F73"/>
+                                    <segue destination="auk-wC-IPZ" kind="show" identifier="startSession" id="Q5O-oK-Gjs"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-tK-a2i">
@@ -260,7 +278,7 @@
                     </view>
                     <connections>
                         <outlet property="confirmTextField" destination="rxi-tK-a2i" id="Cor-54-Jal"/>
-                        <outlet property="firstNameTextField" destination="3Hz-1k-Pdk" id="eOz-jK-xQL"/>
+                        <outlet property="firstNameTextField" destination="3Hz-1k-Pdk" id="TaS-TG-FnR"/>
                         <outlet property="lastNameTextField" destination="PLL-vt-Izm" id="YfV-2r-x1q"/>
                         <outlet property="passwordTextField" destination="b0y-eS-sMV" id="Zy9-NK-uvg"/>
                         <outlet property="usernameTextField" destination="wL6-1W-IyS" id="cuE-EV-g74"/>
@@ -271,4 +289,7 @@
             <point key="canvasLocation" x="1066" y="1160"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Q5O-oK-Gjs"/>
+    </inferredMetricsTieBreakers>
 </document>
