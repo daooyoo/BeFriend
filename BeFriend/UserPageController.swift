@@ -14,17 +14,27 @@ class UserPageController: UIViewController {
     
     let profilePic = UIImageView()
     let welcomeLabel = UILabel()
-    let infolabel = UILabel()
+    let namelabel = UILabel()
+    let interestsLabel = UILabel()
+    
     //var infoTable = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor(red: 234/255, green: 208/255, blue: 45/255, alpha: 1.0)
-        welcomeLabel.text = "Welcome, \(user.firstName)!"
+        
+        welcomeLabel.text = "Welcome, \(user.firstName)"
+        
         profilePic.backgroundColor = .blueColor()
-        infolabel.text = "\(user.firstName) \(user.lastName)"
-        infolabel.numberOfLines = 0
+        
+        namelabel.text = "Name\n\(user.firstName) \(user.lastName)"
+        namelabel.textAlignment = .Center
+        namelabel.numberOfLines = 0
+        
+        interestsLabel.text = "Interests\n\(user.interest1)\n\(user.interest2)\n\(user.interest3)"
+        interestsLabel.textAlignment = .Center
+        interestsLabel.numberOfLines = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,12 +60,19 @@ class UserPageController: UIViewController {
             profilePic.heightAnchor.constraintEqualToConstant(150),
             profilePic.topAnchor.constraintEqualToAnchor(welcomeLabel.bottomAnchor, constant: 20)])
         
-        view.addSubview(infolabel)
-        infolabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(namelabel)
+        namelabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activateConstraints([
-            infolabel.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
-            infolabel.topAnchor.constraintEqualToAnchor(profilePic.bottomAnchor, constant: 20)])
+            namelabel.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
+            namelabel.topAnchor.constraintEqualToAnchor(profilePic.bottomAnchor, constant: 20)])
+        
+        view.addSubview(interestsLabel)
+        interestsLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activateConstraints([
+            interestsLabel.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
+            interestsLabel.topAnchor.constraintEqualToAnchor(namelabel.bottomAnchor, constant: 20)])
         
 //        view.addSubview(infoTable)
 //        infoTable.translatesAutoresizingMaskIntoConstraints = false

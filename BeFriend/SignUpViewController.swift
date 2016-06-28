@@ -15,6 +15,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmTextField: UITextField!
+    @IBOutlet weak var interest1TextField: UITextField!
+    @IBOutlet weak var interest2TextField: UITextField!
+    @IBOutlet weak var interest3TextField: UITextField!
     
     let userHandler = UserHandler()
     var newUser: User?
@@ -27,6 +30,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         case NoConfirm
         case PasswordMismatch
         case UsernameTaken
+        case MissingInterests
     }
     
     override func viewDidLoad() {
@@ -81,9 +85,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let lastName = lastNameTextField.text!
         let username = usernameTextField.text!
         let password = passwordTextField.text!
+        let interest1 = interest1TextField.text!
+        let interest2 = interest2TextField.text!
+        let interest3 = interest3TextField.text!
+        
+        let interests = [interest1, interest2, interest3]
         
         if noBlankFields() && passwordsMatch() && uniqueUsername() {
-            newUser = User(firstName: firstName, lastName: lastName, username: username, password: password)
+            newUser = User(firstName: firstName, lastName: lastName, username: username, password: password, interests: interests)
             userHandler.saveNewUser(newUser!)
         }
     }
@@ -100,6 +109,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 throw Error.NoPassword
             } else if confirmTextField.text == "" {
                 throw Error.NoConfirm
+            } else if (interest1TextField.text == "" || interest2TextField.text == "" || interest3TextField.text == "") {
+                throw Error.MissingInterests
             }
         }
         catch Error.NoFirstName {
@@ -117,6 +128,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         } catch Error.NoConfirm {
             showAlert("Please Confirm Password", viewController: self)
             return false
+        } catch Error.MissingInterests {
+            showAlert("Please Fill In All Interests", viewController: self)
         } catch let error {
             fatalError("\(error)")
         }

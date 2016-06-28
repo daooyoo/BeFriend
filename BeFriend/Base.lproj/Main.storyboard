@@ -203,17 +203,17 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PLL-vt-Izm">
-                                <rect key="frame" x="50" y="155" width="500" height="30"/>
+                                <rect key="frame" x="50" y="145" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wL6-1W-IyS">
-                                <rect key="frame" x="50" y="195" width="500" height="30"/>
+                                <rect key="frame" x="50" y="175" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b0y-eS-sMV">
-                                <rect key="frame" x="50" y="235" width="500" height="30"/>
+                                <rect key="frame" x="50" y="205" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
@@ -230,7 +230,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-tK-a2i">
-                                <rect key="frame" x="50" y="275" width="500" height="30"/>
+                                <rect key="frame" x="50" y="235" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
@@ -246,39 +246,66 @@
                                     <action selector="cancelSignUp" destination="W0P-4R-Vp6" eventType="touchUpInside" id="7hh-ZS-oMS"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Interest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HXV-6E-lJZ" userLabel="Interest 1">
+                                <rect key="frame" x="50" y="265" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Another Interest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qaw-M0-uxE" userLabel="Interest 2">
+                                <rect key="frame" x="50" y="295" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="One More Interest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tml-Dw-wvU" userLabel="Interest 3">
+                                <rect key="frame" x="50" y="325" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wL6-1W-IyS" firstAttribute="top" secondItem="PLL-vt-Izm" secondAttribute="bottom" constant="10" id="2KS-Du-KhF"/>
+                            <constraint firstItem="wL6-1W-IyS" firstAttribute="top" secondItem="PLL-vt-Izm" secondAttribute="bottom" id="2KS-Du-KhF"/>
                             <constraint firstAttribute="trailing" secondItem="3Hz-1k-Pdk" secondAttribute="trailing" constant="50" id="4J0-VK-nvw"/>
                             <constraint firstItem="3Hz-1k-Pdk" firstAttribute="top" secondItem="4Lz-GQ-Mez" secondAttribute="top" constant="115" id="5RL-Zt-fOw"/>
                             <constraint firstItem="rxi-tK-a2i" firstAttribute="leading" secondItem="4Lz-GQ-Mez" secondAttribute="leading" constant="50" id="5XC-eB-NV5"/>
-                            <constraint firstItem="rxi-tK-a2i" firstAttribute="top" secondItem="b0y-eS-sMV" secondAttribute="bottom" constant="10" id="6Tz-3Y-iRo"/>
+                            <constraint firstItem="rxi-tK-a2i" firstAttribute="top" secondItem="b0y-eS-sMV" secondAttribute="bottom" id="6Tz-3Y-iRo"/>
+                            <constraint firstAttribute="trailing" secondItem="qaw-M0-uxE" secondAttribute="trailing" constant="50" id="C89-0S-3JV"/>
+                            <constraint firstItem="tml-Dw-wvU" firstAttribute="leading" secondItem="4Lz-GQ-Mez" secondAttribute="leading" constant="50" id="E7A-6q-c33"/>
                             <constraint firstItem="5re-qw-boE" firstAttribute="top" secondItem="RbF-J3-6VS" secondAttribute="bottom" id="Gdp-xJ-KaI"/>
                             <constraint firstItem="PLL-vt-Izm" firstAttribute="leading" secondItem="4Lz-GQ-Mez" secondAttribute="leading" constant="50" id="GxK-Oe-gE2"/>
-                            <constraint firstItem="b0y-eS-sMV" firstAttribute="top" secondItem="wL6-1W-IyS" secondAttribute="bottom" constant="10" id="HgG-xp-xiK"/>
+                            <constraint firstItem="b0y-eS-sMV" firstAttribute="top" secondItem="wL6-1W-IyS" secondAttribute="bottom" id="HgG-xp-xiK"/>
                             <constraint firstAttribute="bottom" secondItem="MFx-s1-p5f" secondAttribute="bottom" constant="200" id="JeJ-zu-yGJ"/>
+                            <constraint firstItem="tml-Dw-wvU" firstAttribute="top" secondItem="qaw-M0-uxE" secondAttribute="bottom" id="Lm9-61-EKe"/>
+                            <constraint firstItem="qaw-M0-uxE" firstAttribute="top" secondItem="HXV-6E-lJZ" secondAttribute="bottom" id="OvZ-vu-Q3U"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RbF-J3-6VS" secondAttribute="trailing" constant="-20" id="PB5-0S-pos"/>
                             <constraint firstAttribute="trailing" secondItem="b0y-eS-sMV" secondAttribute="trailing" constant="50" id="PKA-QO-5Ca"/>
+                            <constraint firstAttribute="trailing" secondItem="HXV-6E-lJZ" secondAttribute="trailing" constant="50" id="QaL-0J-KuG"/>
                             <constraint firstItem="wL6-1W-IyS" firstAttribute="leading" secondItem="4Lz-GQ-Mez" secondAttribute="leading" constant="50" id="UfJ-x5-bH6"/>
+                            <constraint firstItem="qaw-M0-uxE" firstAttribute="leading" secondItem="4Lz-GQ-Mez" secondAttribute="leading" constant="50" id="VVs-Pq-GYH"/>
                             <constraint firstItem="RbF-J3-6VS" firstAttribute="leading" secondItem="4Lz-GQ-Mez" secondAttribute="leadingMargin" constant="-20" id="VpP-ig-eZy"/>
                             <constraint firstItem="b0y-eS-sMV" firstAttribute="leading" secondItem="4Lz-GQ-Mez" secondAttribute="leading" constant="50" id="Wua-z0-680"/>
                             <constraint firstItem="7b4-Zg-PQp" firstAttribute="top" secondItem="MFx-s1-p5f" secondAttribute="bottom" constant="10" id="YRa-TW-ULr"/>
                             <constraint firstAttribute="trailing" secondItem="rxi-tK-a2i" secondAttribute="trailing" constant="50" id="aM2-iG-W9n"/>
+                            <constraint firstItem="HXV-6E-lJZ" firstAttribute="leading" secondItem="4Lz-GQ-Mez" secondAttribute="leading" constant="50" id="bQ7-O2-AdY"/>
                             <constraint firstAttribute="trailing" secondItem="PLL-vt-Izm" secondAttribute="trailing" constant="50" id="dHH-Uc-Z4P"/>
-                            <constraint firstItem="PLL-vt-Izm" firstAttribute="top" secondItem="3Hz-1k-Pdk" secondAttribute="bottom" constant="10" id="eCd-fi-Fub"/>
+                            <constraint firstItem="PLL-vt-Izm" firstAttribute="top" secondItem="3Hz-1k-Pdk" secondAttribute="bottom" id="eCd-fi-Fub"/>
                             <constraint firstItem="7b4-Zg-PQp" firstAttribute="centerX" secondItem="4Lz-GQ-Mez" secondAttribute="centerX" id="eSc-E2-qhq"/>
                             <constraint firstItem="H3a-Kf-nWb" firstAttribute="centerX" secondItem="4Lz-GQ-Mez" secondAttribute="centerX" id="efU-RV-wZu"/>
                             <constraint firstAttribute="trailing" secondItem="wL6-1W-IyS" secondAttribute="trailing" constant="50" id="jlk-pB-yV4"/>
                             <constraint firstItem="RbF-J3-6VS" firstAttribute="top" secondItem="Scj-N1-Qmt" secondAttribute="bottom" constant="-64" id="kXD-NK-IeK"/>
                             <constraint firstItem="3Hz-1k-Pdk" firstAttribute="leading" secondItem="4Lz-GQ-Mez" secondAttribute="leading" constant="50" id="m0Q-5Z-6gf"/>
                             <constraint firstItem="MFx-s1-p5f" firstAttribute="centerX" secondItem="4Lz-GQ-Mez" secondAttribute="centerX" id="phz-br-VNg"/>
+                            <constraint firstItem="HXV-6E-lJZ" firstAttribute="top" secondItem="rxi-tK-a2i" secondAttribute="bottom" id="s3J-cv-ox2"/>
                             <constraint firstItem="H3a-Kf-nWb" firstAttribute="top" secondItem="4Lz-GQ-Mez" secondAttribute="top" constant="70" id="uov-K2-BeK"/>
+                            <constraint firstAttribute="trailing" secondItem="tml-Dw-wvU" secondAttribute="trailing" constant="50" id="zjP-rK-cVx"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="confirmTextField" destination="rxi-tK-a2i" id="Cor-54-Jal"/>
                         <outlet property="firstNameTextField" destination="3Hz-1k-Pdk" id="TaS-TG-FnR"/>
+                        <outlet property="interest1TextField" destination="HXV-6E-lJZ" id="ZMq-Eu-vxN"/>
+                        <outlet property="interest2TextField" destination="qaw-M0-uxE" id="05H-54-kzB"/>
+                        <outlet property="interest3TextField" destination="tml-Dw-wvU" id="m25-Pw-6YH"/>
                         <outlet property="lastNameTextField" destination="PLL-vt-Izm" id="YfV-2r-x1q"/>
                         <outlet property="passwordTextField" destination="b0y-eS-sMV" id="Zy9-NK-uvg"/>
                         <outlet property="usernameTextField" destination="wL6-1W-IyS" id="cuE-EV-g74"/>
