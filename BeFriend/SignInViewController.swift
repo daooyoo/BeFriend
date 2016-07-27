@@ -37,8 +37,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "startSession" {
             if noBlankFields() && userExists() {
-                if let userPageController = segue.destinationViewController as? UserPageController {
+                if let userPageController = segue.destinationViewController.childViewControllers[0] as? UserPageController {
                     userPageController.user = user
+                }
+                if let mapViewController = segue.destinationViewController.childViewControllers[1] as? MapViewController {
+                    mapViewController.user = user
                 }
             }
         }

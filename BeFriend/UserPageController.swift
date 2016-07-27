@@ -19,10 +19,18 @@ class UserPageController: UIViewController {
     
     //var infoTable = UITableView()
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 0)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor(red: 234/255, green: 208/255, blue: 45/255, alpha: 1.0)
+        
+        //user = User(firstName: "Test", lastName: "Subject", username: "tested", password: "testing", interests: ["Being Tested On", "Anything You Want", "Waiting"])
         
         welcomeLabel.text = "Welcome, \(user.firstName)"
         

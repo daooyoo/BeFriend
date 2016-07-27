@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6314F5691D23403600BB1D67 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6314F5681D23403600BB1D67 /* MapViewController.swift */; };
 		63268EDB1D1C7EAD00ADAA1E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63268EDA1D1C7EAD00ADAA1E /* Utilities.swift */; };
 		633311B71D06105600D7CFDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633311B61D06105600D7CFDE /* AppDelegate.swift */; };
 		633311BF1D06105600D7CFDE /* BeFriend.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 633311BD1D06105600D7CFDE /* BeFriend.xcdatamodeld */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6314F5681D23403600BB1D67 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		63268EDA1D1C7EAD00ADAA1E /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		633311B31D06105600D7CFDE /* BeFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		633311B61D06105600D7CFDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,11 +113,12 @@
 			children = (
 				63268EDA1D1C7EAD00ADAA1E /* Utilities.swift */,
 				633311B61D06105600D7CFDE /* AppDelegate.swift */,
-				639F32B11D076FE700D32E8C /* ViewController.swift */,
 				638766CE1D0A056C0023D569 /* UserHandler.swift */,
+				639F32B11D076FE700D32E8C /* ViewController.swift */,
 				639594651D0767360041DCCA /* SignInViewController.swift */,
 				639F32AF1D076BD900D32E8C /* SignUpViewController.swift */,
 				63EF6CBF1D0DEF2600821D8B /* UserPageController.swift */,
+				6314F5681D23403600BB1D67 /* MapViewController.swift */,
 				6358874A1D061FDB002591DA /* Main.storyboard */,
 				633311C01D06105600D7CFDE /* Assets.xcassets */,
 				633311C21D06105600D7CFDE /* LaunchScreen.storyboard */,
@@ -281,6 +284,7 @@
 				638766CF1D0A056C0023D569 /* UserHandler.swift in Sources */,
 				639594661D0767360041DCCA /* SignInViewController.swift in Sources */,
 				63EF6CC01D0DEF2600821D8B /* UserPageController.swift in Sources */,
+				6314F5691D23403600BB1D67 /* MapViewController.swift in Sources */,
 				633311BF1D06105600D7CFDE /* BeFriend.xcdatamodeld in Sources */,
 				633311B71D06105600D7CFDE /* AppDelegate.swift in Sources */,
 				63268EDB1D1C7EAD00ADAA1E /* Utilities.swift in Sources */,

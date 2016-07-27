@@ -47,8 +47,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "startSession" {
             createAccount()
-            if let userPageController = segue.destinationViewController as? UserPageController {
+            if let userPageController = segue.destinationViewController.childViewControllers[0] as? UserPageController {
                 userPageController.user = newUser
+            }
+            
+            if let mapViewController = segue.destinationViewController.childViewControllers[1] as? MapViewController {
+                mapViewController.user = newUser
             }
         }
     }
@@ -63,6 +67,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         confirmTextField.delegate = self
+        interest1TextField.delegate = self
+        interest2TextField.delegate = self
+        interest3TextField.delegate = self
     }
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -74,9 +81,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
             confirmTextField.becomeFirstResponder()
+        } else if textField == confirmTextField {
+            interest1TextField.becomeFirstResponder()
+        } else if textField == interest1TextField {
+            interest2TextField.becomeFirstResponder()
+        } else if textField == interest2TextField {
+            interest3TextField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
         }
+
         return true
     }
     
