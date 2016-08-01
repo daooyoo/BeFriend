@@ -113,19 +113,21 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func searchForPlacesOfInterest() {
-        let query = user.interest2
-        let request = MKLocalSearchRequest()
-        request.naturalLanguageQuery = query
-        request.region = mapView.region
-        let search = MKLocalSearch(request: request)
-        search.startWithCompletionHandler({ reponse, _ in
-            guard let response = reponse else {
-                return
-            }
-            self.places = response.mapItems
-            self.tableView.reloadData()
-            self.dropPins()
-        })
+        for interest in user.interests {
+            let query = interest
+            let request = MKLocalSearchRequest()
+            request.naturalLanguageQuery = query
+            request.region = mapView.region
+            let search = MKLocalSearch(request: request)
+            search.startWithCompletionHandler({ reponse, _ in
+                guard let response = reponse else {
+                    return
+                }
+                self.places += response.mapItems
+                self.tableView.reloadData()
+                self.dropPins()
+            })
+        }
     }
     
 }

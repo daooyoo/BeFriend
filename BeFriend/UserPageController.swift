@@ -40,7 +40,7 @@ class UserPageController: UIViewController {
         namelabel.textAlignment = .Center
         namelabel.numberOfLines = 0
         
-        interestsLabel.text = "Interests\n\(user.interest1)\n\(user.interest2)\n\(user.interest3)"
+        interestsLabel.text = "Interests\n\(user.interests[0])\n\(user.interests[1])\n\(user.interests[2])"
         interestsLabel.textAlignment = .Center
         interestsLabel.numberOfLines = 0
     }
